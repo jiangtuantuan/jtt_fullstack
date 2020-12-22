@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代理模式</title>
+
+</head>
+<body>
+    <script>
+        //男猪脚 jtt Object
+        //有两部分组成 属性+方法
+        const jtt ={
+            name:'蒋哥',
+            age:18,
+            hometown:'赣州',
+            isSingle:true,
+            
+            sendFlower(sender){
+                sender.receiveFlower(this);
+
+            }
+
+        }
+        const xm={
+            name:'小美',
+            xq:50,
+
+            receiveFlower(target){
+                console.log(this.name+'收到啦'+'谢谢'+target.name)
+                if(this.xq<80){
+                    console.log('不约，我们不约')
+                }else if(this.xq>=80){
+                    console.log('万达走一波');
+                }
+            }
+
+        }
+        
+        const xh={
+            name:'小红',
+            hometown:'南昌',
+            //代理模式
+            //接口
+            receiveFlower(target){
+                if(target.name=='蒋哥'){
+                    setTimeout(()=>{
+                        xm.xq=90; xm.receiveFlower(target);
+                    },2000)
+
+                    
+
+                    //console.log('')
+                   
+                }
+
+            }
+
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!-- <text class="t1">{{dailao}}</text>
+<view>
+<text class="t2">hello,{{xgg}}</text>
+</view> -->
+
+<van-card
+wx:for="{{phones}}"
+wx:for-item="phone"
+wx:key="index"
+    num="{{phone.num}}"
+    price="{{phone.price}}"
+    title='{{phone.title}}'
+    desc="{{phone.desc}}"
+    thumb="{{phone.thumb}}"
+    >
+ </van-card>
+<!--<van-card 
+num="2"
+price="9999.00"
+title='小米10'
+desc="得屌丝者得天下"
+thumb="{{imageURL1}}"
+
+>
+
+</van-card> -->
